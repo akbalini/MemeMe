@@ -17,53 +17,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvj-3V-Pc5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-pu-sMv">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="5GT-dD-gsq"/>
+                                    <constraint firstAttribute="height" constant="44" id="S0c-rs-0Pb"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="lpS-CG-adm"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BPk-p8-Peg"/>
+                                    <barButtonItem tag="101" systemItem="camera" id="SQR-yd-GOo">
+                                        <connections>
+                                            <action selector="chooseOrTakePicture:" destination="vXZ-lx-hvc" id="92B-Vw-Luw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Xbg-5Z-AFF"/>
+                                    <barButtonItem tag="102" systemItem="organize" id="ivQ-7w-ATy">
+                                        <connections>
+                                            <action selector="chooseOrTakePicture:" destination="vXZ-lx-hvc" id="Igk-Z8-ooa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aj2-Ui-nnw"/>
                                 </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5GT-dD-gsq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="5GT-dD-gsq"/>
-                                    </mask>
-                                </variation>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-99-9Uu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="U2d-8x-LXr"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xZ9-If-VqA"/>
+                                    <barButtonItem systemItem="cancel" id="G3x-GG-uBF"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPV-7k-gUi">
+                                <rect key="frame" x="0.0" y="74" width="600" height="482"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6a9-nc-fxm">
+                                <rect key="frame" x="10" y="120" width="581" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CjG-uw-lbl">
+                                <rect key="frame" x="10" y="476" width="581" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qvj-3V-Pc5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="T8o-Tt-LB0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qvj-3V-Pc5" secondAttribute="trailing" constant="-16" id="Vkr-cq-WZ4"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Qvj-3V-Pc5" secondAttribute="bottom" id="grG-WL-3ks"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cdq-99-9Uu" secondAttribute="trailing" constant="-16" id="3Xe-Og-cVs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bPV-7k-gUi" secondAttribute="trailing" constant="-16" id="GHe-kG-yrA"/>
+                            <constraint firstItem="CjG-uw-lbl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-6" id="IME-Uk-RsZ"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fGD-pu-sMv" secondAttribute="bottom" id="Jgh-Sg-WsL"/>
+                            <constraint firstItem="6a9-nc-fxm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-6" id="Tkh-UY-VHP"/>
+                            <constraint firstItem="fGD-pu-sMv" firstAttribute="top" secondItem="CjG-uw-lbl" secondAttribute="bottom" constant="56" id="bZa-69-r9B"/>
+                            <constraint firstItem="Cdq-99-9Uu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="gQ8-DB-EPd"/>
+                            <constraint firstItem="bPV-7k-gUi" firstAttribute="top" secondItem="Cdq-99-9Uu" secondAttribute="bottom" constant="5" id="gaD-8p-svA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fGD-pu-sMv" secondAttribute="trailing" constant="-16" id="iPq-ig-fs0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6a9-nc-fxm" secondAttribute="trailing" constant="-6" id="k2L-FP-RNd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CjG-uw-lbl" secondAttribute="trailing" constant="-6" id="kl6-KF-e23"/>
+                            <constraint firstItem="bPV-7k-gUi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="qxG-fC-QMN"/>
+                            <constraint firstItem="6a9-nc-fxm" firstAttribute="top" secondItem="Cdq-99-9Uu" secondAttribute="bottom" constant="56" id="r77-Hj-EYW"/>
+                            <constraint firstItem="fGD-pu-sMv" firstAttribute="top" secondItem="bPV-7k-gUi" secondAttribute="bottom" constant="5" id="ra1-L5-dqW"/>
+                            <constraint firstItem="fGD-pu-sMv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="yYU-8D-hQZ"/>
+                            <constraint firstItem="Cdq-99-9Uu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ynB-6A-XOf"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Qvj-3V-Pc5"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="T8o-Tt-LB0"/>
-                                <exclude reference="Vkr-cq-WZ4"/>
-                                <exclude reference="grG-WL-3ks"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Qvj-3V-Pc5"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="T8o-Tt-LB0"/>
-                                <include reference="Vkr-cq-WZ4"/>
-                                <include reference="grG-WL-3ks"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="SQR-yd-GOo" id="VWE-VY-PvV"/>
+                        <outlet property="imageChossen" destination="bPV-7k-gUi" id="knt-FG-Y7h"/>
+                        <outlet property="textField1" destination="6a9-nc-fxm" id="znq-CY-RVc"/>
+                        <outlet property="textField2" destination="CjG-uw-lbl" id="hkv-34-Hpf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

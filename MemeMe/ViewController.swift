@@ -25,6 +25,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSStrokeWidthAttributeName : 3
     ]
     
+    func save(){
+        var meme = Meme(topText: textField1.text!, bottomText: textField2.text!, image: imageChossen.image!, memedImage: self.generateMemedImage())
+        
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        
+        // TODO: Hide toolbar and navbar
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO:  Show toolbar and navbar
+        
+        return memedImage
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)

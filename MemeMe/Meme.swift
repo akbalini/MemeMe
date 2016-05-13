@@ -20,6 +20,7 @@ class Meme: NSObject {
         self.bottom = bottomText
         self.originalImage = image
         self.memedImage = memedImage
+        //HOLA
     }
    
 }
